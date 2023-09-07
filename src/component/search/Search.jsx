@@ -92,9 +92,9 @@ const Search = ({ lang }) => {
     }, [getApi])
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-            <Box sx={{ display: 'flex', flexDirection: {xs:'row', lg: 'column'}, justifyItems: 'flex-start', marginLeft: '40px', marginTop: '10px', gap: '30px' }}>
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyItems: 'flex-start', marginLeft: '40px', marginTop: '10px', gap: '30px' }}>
                 <CssTextField sx={{ width: '100%', fontSize: '10px' }} label="Search" id="custom-css-outlined-input" onChange={(e) => setSearch(e.target.value)} />
-                <FormControl sx={{ width: '30%' }} onChange={(e) => setFilter(e.target.value)}>
+                <FormControl sx={{ width: { xs: "100%", sm: '30%' } }} onChange={(e) => setFilter(e.target.value)}>
                     <InputLabel variant="standard" htmlFor="uncontrolled-native">
                         Filter
                     </InputLabel>
