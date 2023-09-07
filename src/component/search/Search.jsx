@@ -91,24 +91,26 @@ const Search = ({ lang }) => {
         getApi()
     }, [getApi])
     return (
-        <Box sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr', justifyItems: 'flex-start', marginLeft: '40px', marginTop: '10px', gap: '30px' }}>
-            <CssTextField sx={{ width: '1000px', fontSize: '10px' }} label="Search" id="custom-css-outlined-input" onChange={(e) => setSearch(e.target.value)} />
-            <FormControl sx={{ width: '100px' }} onChange={(e) => setFilter(e.target.value)}>
-                <InputLabel variant="standard" htmlFor="uncontrolled-native">
-                    Filter
-                </InputLabel>
-                <NativeSelect
-                    defaultValue={30}
-                    inputProps={{
-                        name: 'filter',
-                        id: 'uncontrolled-native',
-                    }}
-                >
-                    <option value={"movie"}>Movie</option>
-                    <option value={'person'}>Actors</option>
-                    <option value={'tv'}>Tv</option>
-                </NativeSelect>
-            </FormControl>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+            <Box sx={{ display: 'flex', flexDirection: {xs:'row', lg: 'column'}, justifyItems: 'flex-start', marginLeft: '40px', marginTop: '10px', gap: '30px' }}>
+                <CssTextField sx={{ width: '100%', fontSize: '10px' }} label="Search" id="custom-css-outlined-input" onChange={(e) => setSearch(e.target.value)} />
+                <FormControl sx={{ width: '30%' }} onChange={(e) => setFilter(e.target.value)}>
+                    <InputLabel variant="standard" htmlFor="uncontrolled-native">
+                        Filter
+                    </InputLabel>
+                    <NativeSelect
+                        defaultValue={30}
+                        inputProps={{
+                            name: 'filter',
+                            id: 'uncontrolled-native',
+                        }}
+                    >
+                        <option value={"movie"}>Movie</option>
+                        <option value={'person'}>Actors</option>
+                        <option value={'tv'}>Tv</option>
+                    </NativeSelect>
+                </FormControl>
+            </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: "20px" }}>
                 <Container sx={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: { xs: "1fr", sm: '1fr 1fr', md: '1fr 1fr 1fr' }, gap: '15px' }}>
                     {state.isLoad ?

@@ -3,7 +3,7 @@ import Home from './component/home/Home';
 import Movies from './component/movies/Movies';
 import Navbar from './component/navbar/Navbar';
 import Filter from './component/filter/Filter';
-import { AppBar, Box, Button, Container, FormControl, InputLabel, MenuItem, Select, TextField, ThemeProvider, Toolbar, createTheme } from '@mui/material';
+import { AppBar, Box, TextField, ThemeProvider, Toolbar, createTheme } from '@mui/material';
 import { useCallback, useEffect, useState } from 'react';
 import TvShow from './component/tvshow/TvShow';
 import Actors from './component/actors/Actors';
